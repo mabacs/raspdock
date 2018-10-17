@@ -1,5 +1,6 @@
 homeassistant/*
 !homeassistant/*.yaml
+!homeassistant/sensors
 homeassistant/secrets.yaml
 
 .env

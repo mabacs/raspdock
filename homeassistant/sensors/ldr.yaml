@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "sinteg/ldr"
+  name: "LDR"
+  # icon: "mdi:lightbulb"

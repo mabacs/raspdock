@@ -1,0 +1,6 @@
+- platform: mqtt
+  state_topic: "sinteg/temperature"
+  name: "Temperature"
+  value_template: "{{ value_json.celsius }}"
+  unit_of_measurement: 'ºC'
+  icon: "mdi:temperature-celsius"

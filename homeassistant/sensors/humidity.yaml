@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "sinteg/humidity"
+  name: "Humidity"
+  unit_of_measurement: '%'
+  icon: "mdi:percent"

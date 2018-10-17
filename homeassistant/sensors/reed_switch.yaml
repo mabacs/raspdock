@@ -1,0 +1,6 @@
+- platform: mqtt
+  state_topic: "sinteg/reedswitch"
+  name: "Reed Switch"
+  payload_available: "open"
+  payload_not_available: "close"
+  icon: "mdi:door"
