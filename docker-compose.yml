@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mosquitto:
+    container_name: mosquitto
+    build:
+      context: ./mosquitto
+      dockerfile: Dockerfile
+      args:
+        MQTT_USERNAME: ${MQTT_USERNAME}
+        MQTT_PASSWORD: ${MQTT_PASSWORD}
+    volumes:
+      - ./mosquitto:/mosquitto
+    network_mode: host
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/raspberrypi2-homeassistant
+    volumes:
+      - ./homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    network_mode: host
+  
+  # node:
+  #   build:
+  #     context: ./docker/node
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "4392:4392"
+  #   networks:
+  #     - hass

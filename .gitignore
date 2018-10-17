@@ -1,0 +1,5 @@
+homeassistant/*
+!homeassistant/*.yaml
+homeassistant/secrets.yaml
+
+.env
