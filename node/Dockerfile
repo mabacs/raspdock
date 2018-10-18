@@ -1,3 +1,11 @@
 FROM arm32v7/node
 
-RUN node -v
+WORKDIR /usr/src/app
+
+COPY ../Dashboard-miser/package*.json ./
+
+RUN npm install
+
+COPY ../Dashboard-miser .
+
+CMD [ "node", "index" ]
