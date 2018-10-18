@@ -2,12 +2,12 @@ FROM arm32v7/node
 
 WORKDIR /usr/src/app
 
-RUN ls ../Dashboard-miser
+COPY ../Dashboard-miser/package.json ./package.json
 
-# COPY ../Dashboard-miser/package*.json ./
+COPY ../Dashboard-miser/package-lock.json ./package-lock.json
 
-# RUN npm install
+RUN npm install
 
-# COPY ../Dashboard-miser .
+COPY ../Dashboard-miser .
 
-# CMD [ "node", "index" ]
+CMD [ "node", "index" ]
