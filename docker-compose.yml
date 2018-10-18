@@ -9,26 +9,26 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /portainer_data:/data
-  # mosquitto:
-  #   container_name: mosquitto
-  #   build:
-  #     context: ./mosquitto
-  #     dockerfile: Dockerfile
-  #     args:
-  #       MQTT_USERNAME: ${MQTT_USERNAME}
-  #       MQTT_PASSWORD: ${MQTT_PASSWORD}
-  #   volumes:
-  #     - ./mosquitto:/mosquitto
-  #   network_mode: host
-  # homeassistant:
-  #   container_name: homeassistant
-  #   image: homeassistant/home-assistant
-  #   # image: homeassistant/raspberrypi2-homeassistant
-  #   volumes:
-  #     - ./homeassistant:/config
-  #     - /etc/localtime:/etc/localtime:ro
-  #   restart: always
-  #   network_mode: host
+  mosquitto:
+    container_name: mosquitto
+    build:
+      context: ./mosquitto
+      dockerfile: Dockerfile
+      args:
+        MQTT_USERNAME: ${MQTT_USERNAME}
+        MQTT_PASSWORD: ${MQTT_PASSWORD}
+    volumes:
+      - ./mosquitto:/mosquitto
+    network_mode: host
+  homeassistant:
+    container_name: homeassistant
+    # image: homeassistant/home-assistant
+    image: homeassistant/raspberrypi2-homeassistant
+    volumes:
+      - ./homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    network_mode: host
   node:
     container_name: node
     build:
