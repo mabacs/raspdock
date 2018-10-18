@@ -1,0 +1,3 @@
+[submodule "node/Dashboard-miser"]
+	path = node/Dashboard-miser
+	url = https://github.com/mabacs/Dashboard-miser.git
