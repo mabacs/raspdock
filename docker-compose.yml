@@ -22,18 +22,18 @@ services:
     network_mode: host
   homeassistant:
     container_name: homeassistant
+    # image: homeassistant/home-assistant
     image: homeassistant/raspberrypi2-homeassistant
     volumes:
       - ./homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
     restart: always
     network_mode: host
-  
-  # node:
-  #   build:
-  #     context: ./docker/node
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "4392:4392"
-  #   networks:
-  #     - hass
+  node:
+    container_name: node
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    ports:
+      - "4392:4392"
+    network_mode: host
