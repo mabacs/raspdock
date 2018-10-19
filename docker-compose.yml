@@ -29,14 +29,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     restart: always
     network_mode: host
-  node:
-    container_name: node
-    build:
-      context: ./node
-      dockerfile: Dockerfile
-    ports:
-      - "4392:4392"
-    network_mode: host
   duckdns:
     image: linuxserver/duckdns
     container_name: duckdns
